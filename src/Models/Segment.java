@@ -4,12 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 import SwingShapes.Ellipse;
+import SwingShapes.Rectangle;
 
 public class Segment {
-	private Ellipse segment;
+	private Rectangle segment;
 	
 	public Segment(int startXLocation, int startYLocation, Color color) {
-		segment = new Ellipse();
+		segment = new Rectangle();
 		segment.setColor(color);
 		segment.setSize(20,  20);
 		segment.setLocation(startXLocation, startYLocation);

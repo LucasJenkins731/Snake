@@ -10,13 +10,10 @@ public class Snake {
 	private int movementAmount;
 
 	public Snake(int startXLocation, int startYLocation, int movementAmount) {
-		direction = Direction.UP;
-		
-		segments.add(new Segment(startXLocation, startYLocation, Color.red));
-	
-		segments.add(new Segment(startXLocation, startYLocation + movementAmount, new Color(255, 0, 255)));
-	
+		direction = Direction.UP;	
+		segments.add(new Segment(startXLocation, startYLocation, Color.BLUE));
 		this.movementAmount = movementAmount;
+		segments.add(new Segment(startXLocation, startYLocation + movementAmount,new Color(0,0,255)));
 	}
 
 	public int getXLocation() {
@@ -37,19 +34,19 @@ public class Snake {
 	
 	
 	public void addSegment() {
-		Segment tail = segments.get(segments.size() - 2);
+		Segment tail = segments.get(segments.size() - 1);
 		switch (direction) {
 			case LEFT:
-				segments.add(new Segment(tail.getXLocation() + movementAmount, tail.getYLocation(), new Color(0, 130, 255)));
+				segments.add(new Segment(tail.getXLocation() + movementAmount, tail.getYLocation(), new Color(0, 0, 255)));
 				break;
 			case RIGHT:
-				segments.add(new Segment(tail.getXLocation() - movementAmount, tail.getYLocation(), new Color(0, 130, 255)));
+				segments.add(new Segment(tail.getXLocation() - movementAmount, tail.getYLocation(), new Color(0, 0, 255)));
 				break;
 			case UP:
-				segments.add(new Segment(tail.getXLocation(), tail.getYLocation() + movementAmount, new Color(0, 130, 255)));
+				segments.add(new Segment(tail.getXLocation(), tail.getYLocation() + movementAmount, new Color(0, 0, 255)));
 				break;
 			case DOWN:
-				segments.add(new Segment(tail.getXLocation(), tail.getYLocation() - movementAmount, new Color(0, 130, 255)));
+				segments.add(new Segment(tail.getXLocation(), tail.getYLocation() - movementAmount, new Color(0, 0, 255)));
 				break;
 		}
 	}
@@ -67,7 +64,7 @@ public class Snake {
 
 	public void move() {
 		Segment head = segments.get(0);
-		head.setColor(new Color(0, 130, 255));
+		head.setColor(new Color(137, 207, 240));
 		segments.remove(segments.size() - 1);
 		int newXLocation = head.getXLocation();
 		int newYLocation = head.getYLocation();
@@ -85,7 +82,7 @@ public class Snake {
 				newYLocation += movementAmount;
 				break;
 		}
-		segments.add(0, new Segment(newXLocation, newYLocation, Color.green));
+		segments.add(0, new Segment(newXLocation, newYLocation, Color.blue));
 	}
 
 	public void draw(Graphics2D g) {
