@@ -10,10 +10,10 @@ public class Snake {
 	private int movementAmount;
 
 	public Snake(int startXLocation, int startYLocation, int movementAmount) {
-		direction = Direction.UP;
-		segments.add(new Segment(startXLocation, startYLocation, Color.blue));
+		direction = Direction.UP;	
+		segments.add(new Segment(startXLocation, startYLocation, Color.BLUE));
 		this.movementAmount = movementAmount;
-		segments.add(new Segment(startXLocation, startYLocation + movementAmount, new Color(0, 0, 255)));
+		segments.add(new Segment(startXLocation, startYLocation + movementAmount,new Color(0,0,255)));
 	}
 
 	public int getXLocation() {
@@ -31,6 +31,7 @@ public class Snake {
 	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}
+	
 	
 	public void addSegment() {
 		Segment tail = segments.get(segments.size() - 1);
@@ -52,7 +53,7 @@ public class Snake {
 	
 	public boolean hasCollidedWithTail() {
 		Segment head = segments.get(0);
-		for (int i = 1; i < segments.size(); i++) {
+		for (int i = 2; i < segments.size(); i++) {
 			Segment next = segments.get(i);
 			if (head.getXLocation() == next.getXLocation() && head.getYLocation() == next.getYLocation()) {
 				return true;

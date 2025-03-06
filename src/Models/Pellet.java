@@ -10,7 +10,7 @@ public class Pellet {
 	
 	public Pellet() {
 		pellet = new Ellipse();
-		pellet.setColor(Color.red);
+		pellet.setColor(Color.gray);
 		pellet.setSize(20, 20);
 	}
 	
