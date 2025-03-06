@@ -13,6 +13,7 @@ public class Snake {
 		direction = Direction.UP;
 		segments.add(new Segment(startXLocation, startYLocation, Color.blue));
 		this.movementAmount = movementAmount;
+		segments.add(new Segment(startXLocation, startYLocation + movementAmount, new Color(0, 0, 255)));
 	}
 
 	public int getXLocation() {
