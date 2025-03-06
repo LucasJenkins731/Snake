@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../Computer_Science_110"
+		},
+		{
+			"path": "../../../../../Computer_Science_Lab"
+		},
+		{
+			"path": "../../../../../../Practice_Java_Problems"
+		},
+		{
+			"path": "../../../../../CSC111"
+		},
+		{
+			"path": "../../../../../SER120"
+		},
+		{
+			"path": "../../../.."
+		}
+	],
+	"settings": {
+		"java.debug.settings.onBuildFailureProceed": true
+	}
+}

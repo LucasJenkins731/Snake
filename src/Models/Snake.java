@@ -12,9 +12,9 @@ public class Snake {
 	public Snake(int startXLocation, int startYLocation, int movementAmount) {
 		direction = Direction.UP;
 		
-		segments.add(new Segment(startXLocation, startYLocation, Color.red));
+		segments.add(new Segment(startXLocation, startYLocation, Color.BLUE));
 	
-		segments.add(new Segment(startXLocation, startYLocation + movementAmount, new Color(255, 0, 255)));
+		segments.add(new Segment(startXLocation, startYLocation + movementAmount, new Color(0, 0, 255)));
 	
 		this.movementAmount = movementAmount;
 	}
@@ -37,7 +37,7 @@ public class Snake {
 	
 	
 	public void addSegment() {
-		Segment tail = segments.get(segments.size() - 2);
+		Segment tail = segments.get(segments.size() - 1);
 		switch (direction) {
 			case LEFT:
 				segments.add(new Segment(tail.getXLocation() + movementAmount, tail.getYLocation(), new Color(0, 130, 255)));
