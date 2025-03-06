@@ -35,7 +35,7 @@ public class Snake {
 		Segment tail = segments.get(segments.size() - 1);
 		switch (direction) {
 			case LEFT:
-				segments.add(new Segment(tail.getXLocation() + movementAmount, tail.getYLocation(), new Color(0, g:0, 255)));
+				segments.add(new Segment(tail.getXLocation() + movementAmount, tail.getYLocation(), new Color(0, 0, 255)));
 				break;
 			case RIGHT:
 				segments.add(new Segment(tail.getXLocation() - movementAmount, tail.getYLocation(), new Color(0, 0, 255)));
