@@ -118,6 +118,30 @@ public class Game extends JPanel {
 							nextDirection = Direction.DOWN;
 						}
 					}
+					// if Up Key was pressed
+					if (e.getKeyCode() == KeyEvent.VK_UP) {
+						if (snake.getDirection() == Direction.LEFT || snake.getDirection() == Direction.RIGHT) {
+							nextDirection = Direction.UP;
+						}
+					}
+					// if Down Key was pressed
+					if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+						if (snake.getDirection() == Direction.LEFT || snake.getDirection() == Direction.RIGHT) {
+							nextDirection = Direction.DOWN;
+						}
+					}
+					// if Left Key was pressed
+					if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+						if (snake.getDirection() == Direction.UP || snake.getDirection() == Direction.DOWN) {
+							nextDirection = Direction.LEFT;
+						}
+					}
+					// if Right Key was pressed
+					 if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+						if (snake.getDirection() == Direction.UP || snake.getDirection() == Direction.DOWN) {
+							nextDirection = Direction.RIGHT;
+						}
+					}
 				}
 
 			}
