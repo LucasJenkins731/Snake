@@ -29,6 +29,8 @@ public class Game extends JPanel {
 	private int numberOfColumns;
 	private final int MOVEMENT_DELAY = 7; // higher value == snake moves slower
 	private int movementDelayCounter;
+	// Added by Brooks
+	private int score; // Adding the score variable
 
 	public Game() {
 		Window.setTitle("Snake");
@@ -37,6 +39,9 @@ public class Game extends JPanel {
 		snake = new Snake(180, 300, GRID_SIZE);
 
 		pellet = new Pellet();
+
+		// Added by Brooks
+		score = 0; // Initializing the score to 0
 
 		// game loop
 		timer = new Timer(1, new ActionListener() {
@@ -74,6 +79,8 @@ public class Game extends JPanel {
 					pellet.setXLocation(newPelletLocation.x * GRID_SIZE);
 					pellet.setYLocation(newPelletLocation.y * GRID_SIZE);
 					snake.addSegment();
+					// Added by Brooks
+					score++; // Increment the score by 1 when the snake eats the pellet
 				}
 
 				movementDelayCounter++;
@@ -159,6 +166,10 @@ public class Game extends JPanel {
 		brush.setColor(Color.black);
 		brush.setFont(new Font("Arial", 0, 10));
 		brush.drawString("Created by: ARTech Industries", getWidth() - 146, getHeight() - 5);
+
+		// Added by Brooks
+		brush.setFont(new Font("Arial", Font.BOLD, 16)); // Setting the font and styling for the score counter
+		brush.drawString("Score: " + score, getWidth() - 100, 20); // Creating the text for the score counter
 	}
 
 	// paints the grid graphics to the screen
