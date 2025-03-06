@@ -167,7 +167,7 @@ public class Game extends JPanel {
 		int incrementTracker = 0;
 		for (int i = 0; i < numberOfRows; i++) {
 			for (int j = 0; j < numberOfColumns; j++) {
-				Color gridColor = j % 2 == incrementTracker ? new Color(220, 220, 220) : Color.white;
+				Color gridColor = j % 2 == incrementTracker ? new Color(53, 94, 59) : Color.green;
 				g.setColor(gridColor);
 				g.fillRect(j * GRID_SIZE, i * GRID_SIZE, GRID_SIZE, GRID_SIZE);
 			}
